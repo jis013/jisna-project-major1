@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .confirmation-box {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .confirmation-box h1 {
+      color: #2ecc71;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .confirmation-box p {
+      font-size: 1.2em;
+      color: #333;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="confirmation-box" id="orderBox">
+    <!-- Content will be inserted by JavaScript -->
+  </div>
+
+  <script>
+    // JavaScript to show order received message
+    const orderBox = document.getElementById("orderBox");
+
+    // Simulate order received (in real app, you'd trigger this after order processing)
+    function showConfirmation() {
+      orderBox.innerHTML = `
+        <h1>✅ Order Received!</h1>
+        <p>Thank you for your purchase. We’ll process your order shortly.</p>
+      `;
+    }
+
+    // Simulate slight delay
+    setTimeout(showConfirmation, 500);
+  </script>
+
+</body>
+</html>

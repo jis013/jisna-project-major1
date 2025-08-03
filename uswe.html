@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Orders</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px;
+      color: #333;
+    }
+    .orders-container {
+      width: 90%;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table thead {
+      background: #007bff;
+      color: #fff;
+    }
+    table th, table td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    table tr:hover {
+      background: #f1f1f1;
+    }
+    .status {
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .pending { background: #ffc107; color: #fff; }
+    .delivered { background: #28a745; color: #fff; }
+    .cancelled { background: #dc3545; color: #fff; }
+  </style>
+</head>
+<body>
+  <h1>Your Orders</h1>
+  <div class="orders-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#1001</td>
+          <td>Smartphone</td>
+          <td>1</td>
+          <td>$499</td>
+          <td><span class="status delivered">Delivered</span></td>
+          <td>2025-08-01</td>
+        </tr>
+        <tr>
+          <td>#1002</td>
+          <td>Headphones</td>
+          <td>2</td>
+          <td>$80</td>
+          <td><span class="status pending">Pending</span></td>
+          <td>2025-08-02</td>
+        </tr>
+        <tr>
+          <td>#1003</td>
+          <td>Laptop</td>
+          <td>1</td>
+          <td>$999</td>
+          <td><span class="status cancelled">Cancelled</span></td>
+          <td>2025-08-03</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
