@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Register</title>
+      <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+      body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to top right, #fcddec, #c4e0f9);
+  height: 107vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 300px;
+  position: relative;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 80%;
+  padding: 10px 30px 9px 9px;
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-group .icon {
+  position: absolute;
+  right: 5px;
+  top: 20%;
+  transform: translateY(-20%);
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.terms input {
+  text-align: center;
+  width:20px;
+  height: 80px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #111;
+  text-decoration: none;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background-color: #715555; 
+}
+
+.close-btn {
+  position:absolute;
+  top: 10px;
+  right: 15px;
+  background: #000;
+ color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.register-btn a{
+   color: white;
+   text-decoration: none;
+}
+
+p {
+  text-align: center;
+  font-size: 13px;
+}
+
+.confirmation-box {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: top;
+      animation: fadeIn 5s ease-in-out;
+    }
+    .confirmation-box h1 {
+      color: #2ecc71;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .confirmation-box p {
+      font-size: 1.2em;
+      color: #333;
+    }
+    @keyframes fadeIn {
+      from { opacity: 10; transform: translateY(-25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<body>
+      <div class="overlay">
+            <div class="form-container">
+                  <button class="close-btn">&times;</button>
+                  <h2>Address of Order</h2>
+                  <form id="registerForm">
+                        <div class="input-group">
+                              <input type="text" id="username" placeholder="Username" required>
+                              <span class="icon">👤</span>
+                        </div>
+                        <div class="input-group">
+                          <input type="phone" id="phone" placeholder="phone" required>
+                          <span class="icon">👤</span>
+                        </div>
+                        <div class="input-group">
+                              <input type="email" id="email" placeholder="Email" required>
+                              <span class="icon">📧</span>
+                        </div>
+                        <div class="input-group">
+                              <input type="Address" id="Address" placeholder="Address" required>
+                              <span class="icon">🔒</span>
+                        </div>
+                        <div class="terms">
+                              <input type="checkbox" id="terms">
+                              <label for="terms">Agree to terms & conditions</label>
+                        </div>
+                        <button type="submit" class="register-btn"><a href="shop.html">Register</a></button>
+                      
+                  </form>
+                  <h3>Already have an account? <a href="about.html">About</a></h3>
+            </div>
+      
+
+      <script>
+        function addOrUpdateUser() {
+      const name = document.getElementById('username').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email =document.getElementById('email').value.trim();
+
+      if (!username || !phone || !email || !Address ) {
+        alert("Please fill all fields.");
+        return;
+      }
+    }
+
+         
+</script>
+</body>
+
+</html>

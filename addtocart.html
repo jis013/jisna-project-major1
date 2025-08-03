@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add to Cart Button</title>
+  <style>
+    body{
+      padding: 80px;
+      background-color: black;
+      text-align: center;
+    }
+    .cart-button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .cart-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="color: white;">Product Name</h2>
+<p style="color: white;">Price: $20</p>
+<button class="cart-button" onclick="addToCart()">Add to Cart</button>
+
+<p id="cart-message"></p>
+<button>
+<a href="location.html">Order</a></button>
+<br>
+<img src="shopping.jpg" alt="">
+<script>
+  function addToCart() {
+    document.getElementById('cart-message').innerText = "Item added to cart!";
+  }
+</script>
+
+</body>
+</html>
