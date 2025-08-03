@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Items Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .search-box {
+      margin-bottom: 20px;
+    }
+    .search-box input {
+      padding: 8px;
+      width: 200px;
+    }
+    .search-box button {
+      padding: 8px 12px;
+    }
+    .item {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search items...">
+    <button onclick="searchItems()">Search</button>
+  </div>
+
+  <div id="itemsList">
+    <div class="item">Apple</div>
+    <div class="item">Banana</div>
+    <div class="item">Orange</div>
+    <div class="item">Grapes</div>
+    <div class="item">Mango</div>
+  </div>
+
+  <script>
+    function searchItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.item');
+      items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(input)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

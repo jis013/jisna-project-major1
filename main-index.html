@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shopping App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<style>
+  body {
+    background: linear-gradient(to top right, #898386, #a7abaf);
+    margin: 0%;
+    padding: 0%;
+    border: #000000;
+  }
+
+  h1 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .form-label {
+    align-content: center;
+  }
+
+  .card {
+    break-inside: avoid;
+  }
+
+  nav {
+    background-color: black;
+    margin: 2px;
+    padding: 1px;
+    border: solid 2px;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+
+  }
+
+  .nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 9px;
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    list-style: none;
+  }
+
+  .dropdown-menu li a {
+    padding: 10px 10px;
+  }
+
+  .dropdown-menu li a:hover {
+    color: #000000;
+  }
+
+  .nav-list li a:hover {
+    color: #090909;
+  }
+
+  .card {
+    width: "50px";
+    height: "50px";
+  }
+
+  .image {
+    justify-self: center;
+  }
+
+  h2 {
+    background-color: rgb(245, 249, 248);
+    color: rgb(5, 5, 5);
+    text-align: center;
+  }
+
+  .card-title {
+    background-color: white;
+  }
+
+  h4 {
+    color: white;
+    text-align: center;
+  }
+
+  p {
+    color: white;
+    text-align: center;
+  }
+
+  .car {
+    width: 10px;
+    height: 10px;
+    color: white;
+    margin-left: 100px;
+  }
+
+  .inp {
+    justify-self: end;
+  }
+
+  .shortcuts {
+    justify-content: center;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .shortcut {
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    width: 80px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+  }
+
+  .shortcut:hover {
+    transform: scale(1.05);
+  }
+
+  .shortcut img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    justify-content: center;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 8px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .location {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    background: rgb(218, 210, 210);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+  }
+
+  .card img {
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .card h3 {
+    margin: 15px 0 10px;
+  }
+
+  .card p {
+    padding: 0 15px 15px;
+    color: #555;
+
+  }
+
+  .card button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .card button:hover {
+    background: #0056b3;
+  }
+
+  .box {
+    width: 200px;
+    background: #efeaea;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    margin: 50px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  .box p {
+    color: rgb(8, 8, 8);
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .close-button:hover {
+    color: red;
+  }
+
+  h6 {
+    color: #4a6cdc;
+  }
+
+  .card-container {
+    background-color: rgb(209, 204, 205);
+  }
+
+  .container-text {
+    justify-content: center;
+  }
+
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background-color: #1e1f26;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  transition: left 0.3s ease;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #b0b3b8;
+  padding: 14px 20px;
+  display: block;
+}
+
+.sidebar a:hover {
+  background: #292b32;
+  color: #fff;
+}
+
+.sidebar.show {
+  left: 0; 
+}
+
+.toggle-btn {
+  position: grid;
+  top: 15px;
+  left: 15px;
+  background: #00bcd4;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+  @media (min-width: 900px) {
+    .sidebar {
+      transform: translateX(0);
+    }
+
+    .toggle-btn,
+    .overlay {
+      display: flex;
+    }
+  }
+  .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    z-index: 1000;
+  }
+
+  .content {
+    margin-left: 260px;
+    padding: 20px;
+  }
+  .result{
+    color: black;
+  }
+
+  .foo {
+    background-color: #000000;
+  }
+
+  @media(max-width:800px) {
+    header {
+      font-size: 18px;
+    }
+
+    footer {
+      font-size: 1 6px;
+    }
+  }
+</style>
+
+<body id="body">
+  <center>
+    <nav>
+
+      <ul class="nav-list">
+        <li><a href="bootstrap.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="about.html">contact</a>
+        <li><a href="logout.html">LogOut</a></li>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">1234567890</a></li>
+          <li><a href="about.html">629251 </a></li>
+          <li><a href="about.html">Colachel</a></li>
+        </ul>
+        </li>
+        <a href="product.html"><i class="fas fa-shopping-cart"></i></a></div></button>
+    </nav>
+  </center>
+  <br>
+  <div class="search-bar">
+    <img src="https://cdn-icons-png.flaticon.com/512/49/49116.png" alt="Search" width="20">
+    <input type="text" id="inpbox" onkeyup="update()" placeholder="Search or ask a question">
+  </div>
+<h1 class="result" id="result"></h1>
+  <br>
+
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="closebtn" onclick="box()">&times;</button>
+    <a href="main-index.html"><i class="fas fa-tachometer-alt"></i> Home</a>
+    <a href="product.html"><i class="fas fa-box"></i> Products</a>
+    <a href="admin-oder-page.html" class="fas fa-shopping-cart"></i> Orders</a>
+    <a href="uswe.html"><i class="fas fa-users"></i> Users</a>
+    <a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+  <button id="toggleBtn" class="toggle-btn" ><i class="fas fa-bars"></i></button>
+  <div class="location">
+    📍 Deliver to Jisna - Kolachal 629251 <p id="h1">Mode</p>
+    <button onclick="light()">light</button>
+    <button onclick="dark()">dark</button>
+  </div>
+  <center>
+    <div class="shortcuts">
+      <div class="shortcut">
+        <a href="gpay.html"> <img src="gpay.jpg" alt="Pay"></a>
+        <div>Pay</div>
+      </div>
+      <div class="shortcut">
+        <a href="baz.html"><img src="ba4.jpg" alt="Bazaar"></a>
+        <div>Bazaar</div>
+      </div>
+      <div class="shortcut">
+        <a href="mx.html"><img src="mx.jpg" alt="MX Player"></a>
+        <div>MX Player</div>
+      </div>
+      <div class="shortcut">
+        <a href="medical.html">
+          <img src="https://cdn-icons-png.flaticon.com/512/3063/3063824.png" alt="Medical"></a>
+        <div>Medical</div>
+      </div>
+      <div class="shortcut">
+        <a href="dress.html">
+          <img src="shop.jpg" alt="Shopping"></a>
+        <div>Shopping</div>
+      </div>
+      <div class="shortcut">
+        <a href="makeup.html">
+          <img src="make.jpg" alt="make"></a>
+        <div>Make-Up</div>
+      </div>
+    </div>
+    <div class="im">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="moto.html"><img src="mobiles.jpg" class="d-block  w-100" height="700px" width="100px"
+                alt="mobile"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="sports.html"><img src="sports.jpg" class="d-block w-100" height="700px" width="200px"
+                alt="sports"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="mx.html"><img src="music.jpg" class="d-block w-100" height="700px" width="200px" alt="music"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="makeup.html"><img src="ma.jpg" class="d-block w-100" height="700px" width="200px" alt="makeup"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="baz.html">
+              <img src="sa2.jpg" class="d-block w-100" height="700px" width="200px" alt="Sweet"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="medical.html">
+              <img src="medical.jpg" class="d-block w-100" height="700px" width="200px" alt="medical"></a>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <a href="newcollections.html"><img src="new.gif" alt="" width="100px" height="80px"></a>
+    </div>
+
+    <video width="400px" height="800px" controls>
+      <source src="iph.mp4" type="video/mp4">
+    </video>
+    <br>
+    <br>
+    <br>
+    <img src="sam.gif" alt="" width="400px" height="500px">
+    <br>
+    <br>
+    <h1 style="background-color: #000000; height: 100px;">List Of Item's</h1>
+    <div class="card-container">
+      <div class="card">
+        <a href="mu1.jpg">
+          <img src="mu1.jpg" alt="Item ">
+          <h3>KeyBoard</h3>
+          10,999 $
+          <p>A musical keyboard is a set of adjacent, keys used to play a variety of instruments.</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="admin-oder-page.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="mu3.jpg">
+          <img src="mu3.jpg" alt="Item ">
+          <h3>Guitar</h3>
+          5000 $
+          <p>Nice product of Guitar details shown here for customers.</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="mu2.jpg">
+          <img src="mu2.jpg" alt="Item ">
+          <h3>Wood Guitar</h3>
+          8000 $
+          <p>Wood an acoustic guitar is made of significantly impacts its sound.</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+      <div class="card">
+        <a href="mu4.jpg">
+          <img src="mu4.jpg" alt="Item ">
+          <h3>Drum's</h3>
+          40,980$
+          <p>Drum, musical instrument, the sound of which is produced by the vibration of a stretched membrane</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+      <div class="card">
+        <a href="mu5.jpg">
+          <img src="mu5.jpg" alt="Item ">
+          <h3>Gramophone</h3>
+          54,000 $
+          <p>A classical antique music player with a large brass horn and a hand-crank mechanism.</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="card-container">
+      <div class="card">
+        <a href="ba2.jpg">
+          <img src="ba2.jpg" alt="Item ">
+          <h3>Lay's</h3>
+          10 $
+          <p>Yammy tasty wow </p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="ba1.jpg">
+          <img src="ba1.jpg" alt="Item">
+          <h3>Nut's and Busicut's</h3>
+          500 $
+          <p>Healthy and good combo offer product.</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+      <div class="card">
+        <a href="ba5.jpg">
+          <img src="ba5.jpg" alt="Item 1">
+          <h3>Oreo Dairy-Milk</h3>
+          300 $
+          <p>Oreo dairy-milk yummy and tasty.</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+      <div class="card">
+        <a href="ba6.jpg">
+          <img src="ba6.jpg" alt="Item">
+          <h3>Bournville</h3>
+          350$
+          <p>Classic 50% offer dark chocolate's.</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+      <div class="card">
+        <a href="ba7.jpg">
+          <img src="ba7.jpg" alt="Item 1">
+          <h3>Chatkeens</h3>
+          150 $
+          <p>Katta Metha Mixer yummy tasty.</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+      <div class="card">
+        <a href="sp1.jpg">
+          <img src="sp1.jpg" alt="Item ">
+          <h3>FunBlast Hockey</h3>
+          400 $
+          <p>Nice product of FunBlast Hockey details </p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="sp2.jpg">
+          <img src="sp2.jpg" alt="Item ">
+          <h3>FoodBall</h3>
+          700 $
+          <p>PVC Rubber Football Ball for Beginners (Red, Size 4) for Age 8-12 Years</p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="sp3.jpg">
+          <img src="sp3.jpg" alt="Item ">
+          <h3>Bat Ball</h3>
+          800 $
+          <p>RioGrand Yuvi Wooden Cricket Bat. </p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="sports.jpg">
+          <img src="sports.jpg" alt="Item ">
+          <h3> Sport's Combos</h3>
+          4000 $
+          <p>Nice product </p>
+        </a>
+        <a href="addtocart.html">
+          <button class="buy-button">Buy Now</button></a>
+        <a href="location.html">
+          <h6>Order Now</h6>
+        </a>
+      </div>
+    </div>
+
+
+  </center>
+  <br>
+  <br>
+  <h1 style="background-color: #000000; height: 100px;">Add to Cart's</h1>
+  <div class="container-text">
+    <div class="row">
+      <div class="col">
+        <a href="womens.jpg">
+          <img src="womens.jpg" width="250px" height="250px">
+          <div class="grid" style="display:grid; grid-template-columns: repeat(3,1fr)"></div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Women's</h5>
+        </a>
+
+        <a href="product.html" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <a href="boy.jpg">
+      <img src="boy.jpg" alt="log" width="250px" height="250px">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Boy's </h5>
+    </a>
+    <a href="product.html" class="btn btn-danger">Add to Cart </a>
+  </div>
+  </div>
+  </div>
+  <br>
+  <br>
+  <div class="col">
+    <a href="make.jpg">
+      <img src="make.jpg" alt="acc" width="250px" height="250px">
+      <div class="card" style="width:18 rem;">
+        <div class="card-body">
+          <h5 class="card-title">Make up</h5>
+    </a>
+    <a href="product.html" class="btn btn-primary">Add to Cart</a>
+
+  </div>
+  </div>
+  </div>
+  <br>
+  <br>
+  <div class="col">
+    <img src="moto.jpg" alt="log" width="250px" height="250px">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Moto-Mobile </h5>
+        <a href="product.html" class="btn btn-danger">Add to Cart </a>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <br>
+  <br>
+
+  <footer>
+    <div class="foo">
+      <u>
+        <h2>About</h2>
+      </u>
+      <div class="image">
+        <img src="icon.jpg" alt="shop" height="50px" width="200px">
+      </div>
+      <div class="row">
+        <div class="col">
+          <h1>Contact:8148-0909</h1>
+          <p>Order Now! Home Delivery Available</p>
+        </div>
+        <br>
+        <h4>Contact:9786-9877</h4>
+        <p>Colachel/629251-TamilNadu/jisnajisna@gmail.com</p>
+
+      </div>
+  </footer>
+
+
+<script>
+
+  function box(){
+  
+    
+  }
+
+const toggleBtn = document.getElementById('toggleBtn');
+const sidebar = document.getElementById('sidebar');
+
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('show'); 
+});
+
+
+      var inpbox = document.getElementById("inpbox")
+      var result = document.getElementById("result")
+
+      function update() 
+      {
+            result.textContent = inpbox.value
+      }
+
+
+  function light() {
+    h1.innerHTML = "Light Mode"
+    body.style.background = "white"
+    body.style.color = "black"
+  }
+
+  function dark() {
+    h1.innerHTML = "Dark Mode"
+    body.style.background = "black"
+    body.style.color = "white"
+  } 
+</script>
+</body>
+</html>

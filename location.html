@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delivery Options</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .options-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .option-card {
+      background: white;
+      padding: 20px;
+      width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .option-card:hover {
+      transform: scale(1.05);
+    }
+    .option-card input {
+      margin-top: 10px;
+    }
+    #selected-option {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Select Your Delivery Option</h2>
+
+  <div class="options-container">
+    <div class="option-card">
+      <h3>Standard Delivery</h3>
+      <p>Delivered in 5-7 days</p>
+      <input type="radio" name="delivery" value="Standard Delivery"> Select
+    </div>
+
+    <div class="option-card">
+      <h3>Express Delivery</h3>
+      <p>Delivered in 2-3 days</p>
+      <input type="radio" name="delivery" value="Express Delivery"> Select
+    </div>
+
+    <div class="option-card">
+      <h3>Same Day Delivery</h3>
+      <p>Delivered today</p>
+      <input type="radio" name="delivery" value="Same Day Delivery"> Select
+    </div>
+
+    <div class="option-card">
+      <h3>Pick Up From Store</h3>
+      <p>Collect it yourself anytime</p>
+      <input type="radio" name="delivery" value="Store Pickup"> Select
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <button onclick="showSelectedOption()">Confirm Option</button>
+  </div>
+
+  <div id="selected-option"></div>
+  <center>
+<a href="notification.html">Order Confirmed</a>
+<br>
+<img src="festival.gif" alt="festival"></center>
+  <script>
+    function showSelectedOption() {
+      const selected = document.querySelector('input[name="delivery"]:checked');
+      if (selected) {
+        document.getElementById('selected-option').innerText = 
+          "You selected: " + selected.value;
+      } else {
+        alert("Please select a delivery option first!");
+      }
+    }
+  </script>
+
+</body>
+</html>

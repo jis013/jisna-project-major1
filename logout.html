@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged Out</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <input type="text" id="username" placeholder="Enter Username" required><br><br>
+    <button onclick="loginUser()">LogOut</button>
+    <h2>You have been logged out successfully!</h2>
+    <p>Thank you for visiting.</p>
+    <button onclick="window.location.href='logoutsuccessfully.html'">Log In Again</button>
+</div>
+
+</body>
+<script>
+     function loginUser() {
+        const user = document.getElementById('username').value;
+        if (user) {
+            alert("Logout Successful!");
+            window.location.href = "thank.html";
+        } else {
+            alert("Please logout!");
+        }
+    }
+</script>
+</html>

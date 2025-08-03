@@ -1,0 +1,79 @@
+body{
+      padding: 5%;
+      border: 5%;
+      background-color: azure;
+      
+}
+header{
+      
+      text-align:center;
+}
+img{
+     width: 170px;
+     height: 140px;
+
+}
+
+h1{
+      font-family:serif;
+      
+}
+.item-form{
+
+      height: 30px;
+      text-align: center;
+}
+.form-control{
+             
+box-sizing:content-box;
+text-align: center;
+
+}
+.form-input{
+      text-align: center;
+}
+.fa-solid {
+      text-align: center;
+  
+}
+.filter{
+      outline-offset: 12px;
+      gap: 10px;
+      text-align: center;
+}
+.form-input-filter{
+     outline-offset: 5px;
+}
+.btn{
+    margin: 10px;
+padding: 5px;
+height: 35px;
+ background-color: red;
+ color: white;
+ border-radius: 8px;
+ font-size: 15px;
+}
+.items{
+      display:flex;
+      grid-template-columns: repeat(2,1fr);
+      gap: 10px;
+     text-align: center;
+    
+
+}
+ol{
+      outline:solid 1px black;
+ padding: 5px;
+ color: black;
+ border-radius: 5px;
+ font-size: 16px;
+}
+.btn-clear
+{
+    text-align: center;
+    outline:solid 1px black;
+ padding: 5px;
+ color: black;
+ border-radius: 5px;
+ font-size: 16px;
+}

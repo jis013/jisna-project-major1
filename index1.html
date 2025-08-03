@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  nav {
+  background-color: black;
+}
+
+.nav-lis {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0px ;
+  
+}
+
+.nav-lis a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: block;
+}
+
+/* Dropdown Menu Styling */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li a:hover {
+  color: #000000;
+}
+
+/* Hover Effects */
+.nav-lis li a:hover {
+  color: #070707;
+}
+</style>
+<body>
+  <nav>
+    <ul class="nav-lis">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">contact </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">1234567890</a></li>
+          <li><a href="#">629251 </a></li>
+          <li><a href="#">Colachel</a></li>
+        </ul>
+      </li></nav>
+  <h2>User Login</h2>
+  <form id="loginForm">
+    <input type="email" placeholder="Email" required><br>
+    <input type="password" placeholder="Password" required><br>
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <a href="moto-about.html">Register</a></p>
+</body>
