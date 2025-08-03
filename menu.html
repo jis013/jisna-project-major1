@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel Sidebar</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #1e1f26;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding-top: 20px;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+.sidebar h4 {
+  text-align: center;
+  color: #00bcd4;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #b0b3b8;
+  display: block;
+  padding: 15px 20px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background: #292b32;
+  color: #fff;
+  border-left: 4px solid #00bcd4;
+}
+
+.sidebar a i {
+  margin-right: 10px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #00bcd4;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 1100;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 900;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* Desktop view - Sidebar always visible */
+@media (min-width: 900px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+  .toggle-btn,
+  .overlay {
+    display: none;
+  }
+}
+
+.content {
+  margin-left: 260px;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- Toggle Button -->
+<button id="toggleBtn" class="toggle-btn"><i class="fas fa-bars"></i></button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <h4>Admin Panel</h4>
+  <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+  <a href="#"><i class="fas fa-box"></i> Products</a>
+  <a href="#"><i class="fas fa-shopping-cart"></i> Orders</a>
+  <a href="#"><i class="fas fa-users"></i> Users</a>
+  <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Content -->
+<div class="content">
+  <h1>Welcome to Admin Panel</h1>
+  <p>Click the ☰ button on mobile to open the menu.</p>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('toggleBtn');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('show');
+  overlay.classList.toggle('show');
+
+  toggleBtn.innerHTML = sidebar.classList.contains('show')
+    ? '<i class="fas fa-times"></i>'
+    : '<i class="fas fa-bars"></i>';
+});
+
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('show');
+  overlay.classList.remove('show');
+  toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+});
+</script>
+
+</body>
+</html>

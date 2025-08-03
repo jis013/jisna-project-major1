@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Card Items Example</title>
+      <style>
+            body {
+                  font-family: Arial, sans-serif;
+                  background: #1f1919;
+                  margin: 20px;
+            }
+
+            .card-container {
+                  display: flex;
+                  gap: 20px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+            }
+
+            .card {
+                  background: rgb(228, 223, 223);
+                  border-radius: 10px;
+                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                  width: 450px;
+                  text-align: center;
+                  overflow: hidden;
+                  transition: 0.3s;
+            }
+
+            .card:hover {
+                  transform: scale(1.05);
+            }
+
+            .card img {
+                  width: 100%;
+                  height: 500px;
+                  object-fit: cover;
+            }
+
+            .card h3 {
+                  margin: 15px 0 10px;
+            }
+
+            .card p {
+                  padding: 0 15px 15px;
+                  color: #555;
+            }
+
+            .card button {
+                  background: #007bff;
+                  color: white;
+                  border: none;
+                  padding: 10px 20px;
+                  margin-bottom: 15px;
+                  cursor: pointer;
+                  border-radius: 5px;
+            }
+
+            .card button:hover {
+                  background: #0056b3;
+            }
+      </style>
+</head>
+
+<body>
+
+      <div class="card-container">
+            <div class="card">
+                  <a href="mu1.jpg">
+                  <img src="mu1.jpg" alt="Item 1">
+                  <h3>piano</h3>
+                  <p>A piano is a musical instrument played by pressing keys on a keyboard, which causes hammers to strike strings, producing sound..</p></a>
+                  <button class="buy-button">Buy Now</button>
+                  <a href="location.html">
+                        <h1>Order</h1>
+                  </a>
+            </div>
+
+            <div class="card">
+                  <a href="">
+                  <img src="mu2.jpg" alt="Item 2">
+                  <h3>Wood Guitar</h3>
+                  <p>Guitars are typically made from a combination of different types of wood.</p></a>
+                  <button class="buy-button">Buy Now</button>
+                  <a href="location.html">
+                        <h1>Order</h1>
+                  </a>
+            </div>
+
+            <div class="card">
+                  <a href="mu3.jpg">
+                  <img src="mu3.jpg" alt="Item 3">
+                  <h3>Guitar</h3>
+                  <p>The wood used for the top, back, sides, and neck all contribute to the overall sound of the instrument</p></a>
+                  <button class="buy-button">Buy Now</button>
+                  <a href="location.html">
+                        <h1>Order</h1>
+                  </a>
+            </div>
+            <div class="card">
+                  <a href="mu5.jpg">
+                  <img src="mu5.jpg" alt="Item 1">
+                  <h3>Gramophone</h3>
+                  <p>A gramophone is an early mechanical device for playing recorded sound, specifically disc records..</p></a>
+                  <button class="buy-button">Buy Now</button>
+                  <a href="location.html">
+                        <h1>Order</h1>
+                  </a>
+            </div>
+            <div class="card">
+                  <a href="mu4.jpg">
+                  <img src="mu4.jpg" alt="Item 1">
+                  <h3>Drum's</h3>
+                  <p>A drum is a musical instrument, typically a hollow cylinder or bowl with a stretched membrane (drumhead) across one or both ends.</p></a>
+                  <button class="buy-button">Buy Now</button>
+                  <a href="location.html">
+                        <h1>Order</h1>
+                  </a>
+            </div>
+      </div>
+</body>
+<script>
+      // Get all buttons with class 'buy-button'
+      const buttons = document.querySelectorAll('.buy-button');
+
+      buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                  alert('Thank you for your interest! We will contact you soon.');
+            });
+      });
+</script>
+
+</html>

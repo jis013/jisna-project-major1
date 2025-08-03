@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f7f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .confirmation-box {
+      text-align: center;
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      max-width: 400px;
+    }
+
+    .confirmation-box .icon {
+      font-size: 60px;
+      color: #4BB543;
+      animation: pop 0.4s ease-out;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .confirmation-box h2 {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .confirmation-box p {
+      font-size: 16px;
+      color: #666;
+      margin: 10px 0 20px;
+    }
+
+    .confirmation-box a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #29712f;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .confirmation-box a:hover {
+      background-color: #376637;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="confirmation-box">
+    <div class="icon">✔</div>
+    <h2>Order Placed Successfully!</h2>
+    <p>Thank you for shopping with us. Your order is confirmed.</p>
+    <a href="logout.html">Go to Home</a>
+  </div>
+
+</body>
+</html>
